@@ -1,4 +1,6 @@
 print("SALE TRUC QUE J AI PAS LE DROIT DE DIRE")
+
+
 from base64 import b64decode
 from Crypto.Cipher import AES
 from win32crypt import CryptUnprotectData
@@ -143,4 +145,4 @@ def main():
 if __name__ == '__main__':
     main()
 
-print("Docteur Juif?")
+print("oiiaioiaiiai")
