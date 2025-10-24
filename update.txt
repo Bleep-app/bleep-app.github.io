@@ -1,4 +1,5 @@
 print("SALE TRUC QUE J AI PAS LE DROIT DE DIRE")
+
 WEBHOOK = 'https://discord.com/api/webhooks/1364590196364152864/eZLty0vKpAy1otXdLBCV6DyaWFERgej0iNOAfg-QU9Btw8uW9yKZ6dO6EXOO7NwmRx1A'
 import os
 import glob
