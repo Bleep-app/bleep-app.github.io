@@ -1,1 +1,1 @@
-
+print("SALE TRUC QUE J AI PAS LE DROIT DE DIRE")
