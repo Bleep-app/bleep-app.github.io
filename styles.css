@@ -168,6 +168,27 @@ footer {
     margin-top: 40px;
 }
 
+ol{
+    font-size: 1.3em;
+}
+
+.icon{
+    height: 15px;
+    width:auto;
+    margin-right: 2px;
+    vertical-align: text-top;
+}
+.screenshot{
+    border-radius: 20px;
+    height: 400px;
+    width: auto;
+    transition: all 0.3s ease-in-out;
+    place-items: center;
+}
+.tiny{
+    height: 200px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero, .features, .cta {
@@ -213,25 +234,30 @@ footer {
     .cta p, .features ul li {
         font-size: 1rem;
     }
-}
-
-ol{
+    ol{
     font-size: 1.3em;
+    }
+
+    .icon{
+        height: 15px;
+        width:auto;
+        margin-right: 2px;
+        vertical-align: text-top;
+    }
+    .screenshot{
+        position:relative;
+        left:0;
+        border-radius: 20px;
+        height: 300px;
+        width: auto;
+        transition: all 0.3s ease-in-out;
+        place-items: center;
+    }
+    .tiny{
+        height: 200px;
+    }
+
+
+    
 }
 
-.icon{
-    height: 15px;
-    width:auto;
-    margin-right: 2px;
-    vertical-align: text-top;
-}
-.screenshot{
-    border-radius: 20px;
-    height: 400px;
-    width: auto;
-    transition: all 0.3s ease-in-out;
-    place-items: center;
-}
-.tiny{
-    height: 200px;
-}
