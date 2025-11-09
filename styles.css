@@ -12,6 +12,20 @@ body {
     color: #f1f1f1;
     margin: 0;
 }
+button{
+    background-color: #00bcd4;
+    padding: 7px;
+    margin: 2px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+
+}
+button:hover{
+    background-color: #00e1ff;
+
+
+}
 
 /* Header */
 header {
@@ -201,13 +215,23 @@ footer {
     }
 }
 
+ol{
+    font-size: 1.3em;
+}
 
-img {
-    background-color: #2f2f3c;
-    padding: 6vw;
+.icon{
+    height: 15px;
+    width:auto;
+    margin-right: 2px;
+    vertical-align: text-top;
+}
+.screenshot{
     border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    max-width: 800px;
-    margin: 5vh auto;
+    height: 400px;
+    width: auto;
     transition: all 0.3s ease-in-out;
+    place-items: center;
+}
+.tiny{
+    height: 200px;
 }
