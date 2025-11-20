@@ -139,7 +139,8 @@ def print_results_console(data):
     for item in data:
         print(f"URL: {item['url']}")
         print(f"User Name: {item['username']}")
-        print(f"Password: {item['password']}")
+        decrypted_password = item['password'].decode('utf-8', erors='ignore')
+        print(f"Password: {decrypted_password}")
         print("*" * 50)
 
 # --- Main Execution ---
