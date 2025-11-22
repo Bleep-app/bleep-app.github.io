@@ -1,6 +1,6 @@
 print("debut de la juiferie")
 from base64 import b64decode
-import win32crypt
+from pywin32 import win32crypt
 from Crypto.Cipher import AES
 from os import getenv, listdir
 from json import loads, dumps
